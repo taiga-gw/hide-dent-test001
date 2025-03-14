@@ -1,0 +1,684 @@
+<?php include_once "{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"; ?>
+<?php get_header(); ?>
+<?php
+get_template_part('template/nav');
+?>
+    <link rel="stylesheet" href="./form/mfp.statics/mailformpro.css?v=1.0.2" type="text/css" media="all">
+    <link rel="stylesheet" href="./css/d-exam.css?v=1.0.2">
+    <link rel="stylesheet" href="./css/ortho-lp.css?v=1.0.2">
+
+    <link rel="stylesheet" href="./form/lp-form.css?v=1.0.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.min.css">
+    <style>
+        /** float-entry-bnr **/
+        
+        .float__entry-bnr {
+            position: fixed;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /*backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);*/
+            width: 100%;
+            left: 0;
+            padding: 12px;
+            transition: ease all 0.5s;
+        }
+        
+        .float__entry-bnr.fix__float {
+            /*bottom: 60px;*/
+            bottom: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        a.float__entry-link {
+            display: flex;
+            width: 100%;
+            height: 64px;
+            align-items: center;
+            background: rgb(236, 139, 45);
+            background: linear-gradient(180deg, rgba(236, 139, 45, 1) 0%, rgba(253, 178, 73, 1) 100%);
+            justify-content: center;
+        }
+        
+        a.float__entry-link:hover {
+            background: rgb(255, 159, 65);
+            background: linear-gradient(180deg, rgba(255, 159, 65, 1) 0%, rgba(250, 183, 89, 1) 100%);
+        }
+        
+        .float__entry-text {
+            color: #fff;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+        }
+        
+        .float__entry-text::before {
+            content: "";
+            background: url(./img/float-entry-icon.svg) no-repeat;
+            width: 32px;
+            height: 29px;
+            background-size: 100%;
+            display: block;
+        }
+        
+        @media screen and (min-width: 901px) {
+            .float__entry-bnr {
+                bottom: -192px;
+                z-index: 9999;
+            }
+            .float__entry-bnr.fix__float {
+                bottom: 0;
+                padding: 20px 24px;
+            }
+            a.float__entry-link {
+                max-width: 80%;
+                height: 152px;
+                margin: auto;
+            }
+            .float__entry-text {
+                font-size: 40px;
+                gap: 40px;
+            }
+            .float__entry-text::before {
+                width: 64px;
+                height: 57px;
+            }
+        }
+        
+        footer {
+            margin-bottom: 192px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .float__entry-bnr.fix__float {
+                bottom: 59px;
+            }
+            .pagetop_btn {
+                bottom: 100px;
+            }
+            footer {
+                margin-bottom: 92px;
+            }
+            .float__entry-bnr.fix__float {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+
+    <main>
+        <section class="sec-mv02__wrapper">
+            <div class="sec-mv02__cont">
+                <div class="sec-mv02__bg u__pc-only">
+                    <img src="./img/ortho-lp/sec-mv__02.webp" alt="無料歯並び矯正相談会">
+                </div>
+                <div class="sec-mv02__inner">
+                    <div class="sec-mv02__ttlwrap">
+                        <div class="sec-mv02__ttl">
+                            <picture>
+                                <source srcset="./img/ortho-lp/sec-mv__01.png" media="(min-width:1024px)">
+                                <source srcset="./img/ortho-lp/sec-mv__01-tb.png" media="(min-width:768px)">
+                                <img src="./img/ortho-lp/sec-mv__01-sp.png" alt="無料歯並び矯正相談会">
+                            </picture>
+                        </div>
+
+                        <div class="sec-mv02__subttl">
+                            <span class="sec-mv02__subttl-wrap">口腔内3Dスキャンで歯並びの状態がわかる</span>
+                        </div>
+                    </div>
+
+                    <div class="sec-mv02__bottom-txt">
+                        <span class="sec-mv02__bottom-txt-l">3/8</span>（土）　<span class="sec-mv02__bottom-txt-l">3/29</span>（土）
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-10__wrapper sec__wrapper">
+            <div class="sec-10__inner sec__inner">
+                <div class="sec-10__ttl-wrap">
+                    <h2 class="sec-10__ttl sec__ttl">
+                        <span class="sec__ttl-m">矯正治療をお考えの方へ<br></span>このようなお悩み<br class="u__sp-only">ありませんか？
+                    </h2>
+                    <div class="sec-10__txt sec__txt">
+                        ご自身やお子様の歯並びについて、以下のようなことにお困りではありませんか？
+                    </div>
+                </div>
+
+                <div class="sec-10__list-wrap">
+                    <picture class="sec-10__list-bg">
+                        <source srcset="./img/ortho-lp/sec-10__06.png" media="(min-width:1440px)">
+                        <source srcset="./img/ortho-lp/sec-10__06-tb.png" media="(min-width:768px)">
+                        <img src="./img/ortho-lp/sec-10__06-sp.png" alt="矯正治療をお考えの方へ このようなお悩みありませんか？">
+                    </picture>
+                    <div class="sec-10__list-inner">
+                        <ul class="sec-10__list">
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    <span class="sec-10__item-l">目立つ</span>矯正装置を<br>
+                                    <span class="sec-10__item-l">つけたくない</span>
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    <span class="sec-10__item-l">費用</span>って<br class="u__sp-only">どれくらい？
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    <span class="sec-10__item-l">前歯</span>の</span><span class="sec-10__item-l">気になる</span><br class="u__sptb"><span class="sec-10__item-l">部分</span><br class="u__pc-only"><span class="sec-10__item-l">だけ</span>治したい
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    矯正治療に<span class="sec-10__item-l">年齢制限</span>はある？<br>
+                                    <span class="sec-10__item-l">40代</span>でもできる？
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    <span class="sec-10__item-l">子ども</span>の<span class="sec-10__item-l">歯並び</span>を<br>
+                                    <span class="sec-10__item-l">キレイ</span>にしたい
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    子どもは<span class="sec-10__item-l">何歳から</span><br> 矯正できるの？
+                                </div>
+                            </li>
+                            <li class="sec-10__item">
+                                <div class="sec-10__item-wrap">
+                                    <span class="sec-10__item-l">痛みなく</span>矯正したい
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <picture class="sec-10__list-img u__pctb">
+                    <source srcset="./img/ortho-lp/sec-10__07.png" media="(min-width:1024px)">
+                    <img src="./img/ortho-lp/sec-10__07-tb.png" alt="矯正治療をお考えの方へ このようなお悩みありませんか？">
+                </picture>
+            </div>
+        </section>
+
+        <section class="sec-06__wrapper sec__wrapper">
+            <div class="sec-01__inner sec__inner">
+                <div class="sec-01__ttlwrap">
+                    <h2 class="sec-01__ttl sec__ttl">
+                        無料<br class="u__sp-only">歯並び矯正相談会<span class="sec__ttl-m">を</span><br class="u__sp-only">開催<span class="sec__ttl-m">いたします</span>
+                    </h2>
+                </div>
+
+                <div class="sec-01__listwrap">
+                    <ul class="sec-01__list">
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">日時</dt>
+                                <dd class="sec-01__itemtxt sec__txt">
+                                    2025年 3/8(土)　　3/29(土)　　<br class="u__sp-only">09:00～17:00<br>※休診日は除く
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">内容</dt>
+                                <dd class="sec-01__itemtxt sec__txt">
+                                    大人もこどもも　無料歯並び矯正相談 <br> 無料カウンセリング
+                                    <br> 3D口腔内スキャンニング
+                                    <br> おおまかな治療法や料金の説明
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">対象</dt>
+                                <dd class="sec-01__itemtxt sec__txt">
+                                    ６歳以上なら誰でも
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">費用</dt>
+                                <dd class="sec-01__itemtxt sec__txt">無料</dd>
+                            </dl>
+                        </li>
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">実施医院</dt>
+                                <dd class="sec-01__itemtxt sec__txt">
+                                    ひで歯科クリニック <br class="u__sp-only">山口県山口市中央4-1-1 <br> JR西日本「山口」より徒歩13分
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="sec-01__item">
+                            <dl class="sec-01__itemwrap">
+                                <dt class="sec-01__itemttl sec__txt">
+                                予約・お問い合わせ
+                            </dt>
+                                <!-- 20241225 ボタン変更 -->
+                                <div class="sec-01__item-retouch-wrap">
+                                    <div class="sec-01__item-retouch">
+                                        <a href="https://reserve.peraichi.com/r/50d8aa35/select_date?course=53133"><span
+                                            class="web">いますぐWEB予約する</span></a>
+                                        <a href="https://page.line.me/ivn8633z?openQrModal=true"><span
+                                            class="line">いますぐLINE相談する</span></a>
+                                        <a href="tel:0839022225"><span class="tel">いますぐ電話する</span></a>
+                                    </div>
+                                    <p>※本キャンペーンは定員を設けておりますので、事前の予約をお願いいたします。<br> ※LINEでご予約をする際には、公式LINE登録のうえ「矯正相談会」とメッセージを送りください。担当者から予約希望日の確認連絡をいたします。
+                                    </p>
+                                </div>
+                                <!--// 20241225 -->
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-07__wrapper sec__wrapper">
+            <div class="sec-07__inner sec__inner">
+                <h2 class="sec-07__ttl sec__ttl">
+                    <span class="sec__ttl-m">ひで歯科クリニック<br class="u__sp-only">無料歯並び矯正相談会</span><br> 当日の流れ
+                </h2>
+
+                <div class="sec-07__items">
+                    <div class="sec-07__item">
+                        <div class="sec-07__itemimg">
+                            <img src="./img/ortho-lp/sec-07__01.webp" alt="カウンセリング">
+                        </div>
+                        <div class="sec-07__itemwrap">
+                            <div class="sec-07__itemnum-wrap">
+                                <div class="sec-07__itemnum">
+                                    01
+                                </div>
+                            </div>
+                            <div class="sec-07__itemttl sec__ttl">
+                                <span class="sec__ttl-m">カウンセリング</span>
+                            </div>
+                            <div class="sec-07__itemtxt sec__txt">
+                                ご自身やお子様の歯並び・噛み合わせについて、気になる点やお悩みの点をお伺いします。個室のカウンセリングルームで行うので、周囲を気にせずお話しいただけます。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sec-07__item">
+                        <div class="sec-07__itemimg">
+                            <img src="./img/ortho-lp/sec-07__02.webp" alt="口腔内3Dスキャナ ーでの撮影">
+                        </div>
+                        <div class="sec-07__itemwrap">
+                            <div class="sec-07__itemnum-wrap">
+                                <div class="sec-07__itemnum">
+                                    02
+                                </div>
+                            </div>
+                            <div class="sec-07__itemttl sec__ttl">
+                                <span class="sec__ttl-m">口腔内3Dスキャナーでの撮影</span>
+                            </div>
+                            <div class="sec-07__itemtxt sec__txt">
+                                口腔内3Dスキャナー（iTero・アイテロ）で、歯並びを撮影します。お口の中のを短時間で撮影でき、撮影したそばから画面上で立体的な画像を確認できます。また、撮影自体も光を当てるだけなので、レントゲンのような被ばくの心配がなく、安心です。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sec-07__item">
+                        <div class="sec-07__itemimg">
+                            <img src="./img/ortho-lp/sec-07__03.webp" alt="矯正治療についてのご説明">
+                        </div>
+                        <div class="sec-07__itemwrap">
+                            <div class="sec-07__itemnum-wrap">
+                                <div class="sec-07__itemnum">
+                                    03
+                                </div>
+                            </div>
+                            <div class="sec-07__itemttl sec__ttl">
+                                <span class="sec__ttl-m">矯正治療についてのご説明</span>
+                            </div>
+                            <div class="sec-07__itemtxt sec__txt">
+                                iTeroで撮影した歯列画像を見ながら、現在の歯並びの状態や、取りうる矯正治療の方法などについて、ドクターがご説明いたします。矯正期間だけでなく、ちょっと聞きづらい費用・お支払方法もしっかりお話いたします。気になる点や疑問点がありましたら、お気軽におたずねください。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-08__wrapper sec__wrapper">
+            <div class="sec-08__inner sec__inner">
+                <div class="sec-08__ttlwrap">
+                    <h2 class="sec-08__ttl sec__ttl">
+                        ひで歯科クリニック<br class="u__sp-only"><span class="sec-08__ttl-m sec__ttl-m">の</span>矯正治療
+                    </h2>
+
+
+                    <div class="sec-08__txt sec__txt">
+                        当院はマウスピース矯正を中心に、歯列治療をご提供しております。子供から大人まで、前歯の気になる部分のみから上下顎全体までと、幅広い症例に対応しています。<br> 皆様に安心して治療を受けていただけるよう、ひで歯科クリニックでは次のような取り組みを行っています。
+                    </div>
+                </div>
+
+                <div class="sec-08__items">
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__01.png" alt="山口県で唯一、インビザドクターに認定">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">山口県</span><span class="sec-08__itemttl-m">で</span><span class="sec-08__itemttl-blu">唯一</span><span class="sec-08__itemttl-m">、</span><br>
+                            <span class="sec-08__itemttl-org">インビザドクター</span><span class="sec-08__itemttl-m">に</span><span class="sec-08__itemttl-blu">認定</span>
+                        </div>
+                    </div>
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__01.png" alt="マウスピース矯正治療実績1695症例以上">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">マウスピース矯正治療実績</span><br>
+                            <span class="sec-08__itemttl-org">1695症例</span><span class="sec-08__itemttl-m">以上</span>
+                        </div>
+                        <div class="sec-08__itemtxt sec__txt">
+                            ※2023年グループ内
+                        </div>
+                    </div>
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__01.png" alt="インビザラインダイヤモンドプロバイダー認定医院">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">インビザライン</span><br>
+                            <span class="sec-08__itemttl-org">ダイヤモンドプロバイダー</span><br>
+                            <span class="sec-08__itemttl-blu">認定医院</span>
+                        </div>
+                    </div>
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__02.png" alt="審美だけでなく、 機能面も考慮して治療">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">審美</span><span class="sec-08__itemttl-m">だけでなく、</span><br>
+                            <span class="sec-08__itemttl-org"> 機能面</span><span class="sec-08__itemttl-m">も</span><span class="sec-08__itemttl-org">考慮</span><span class="sec-08__itemttl-m">して</span><span class="sec-08__itemttl-blu">治療</span>
+                        </div>
+                    </div>
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__02.png" alt="アプリ「オルソコム」を導入">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">治療経過</span><span class="sec-08__itemttl-m">が</span><span class="sec-08__itemttl-blu">振り返りやすい</span><br>
+                            <span class="sec-08__itemttl-m">アプリ</span><span class="sec-08__itemttl-org">「オルソコム」</span><span class="sec-08__itemttl-m">を</span><span class="sec-08__itemttl-blu">導入</span>
+                        </div>
+                    </div>
+                    <div class="sec-08__item">
+                        <div class="sec-08__itemimg">
+                            <img src="./img/ortho-lp/sec-08__02.png" alt="治療期間・痛みを軽減する「オーソパルス」を導入">
+                        </div>
+                        <div class="sec-08__itemttl">
+                            <span class="sec-08__itemttl-blu">治療期間・痛み</span><span class="sec-08__itemttl-m">を</span><span class="sec-08__itemttl-blu">軽減</span><span class="sec-08__itemttl-m">する</span><br>
+                            <span class="sec-08__itemttl-org">「オーソパルス」</span><span class="sec-08__itemttl-m">を</span><span class="sec-08__itemttl-blu">導入</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-09__wrapper sec__wrapper">
+            <picture class="sec-09__bg">
+                <source srcset="./img/ortho-lp/sec-09__01.webp" media="(min-width:1024px)">
+                <source srcset="./img/ortho-lp/sec-09__01-tb.webp" media="(min-width:768px)">
+                <img src="./img/ortho-lp/sec-09__01-sp.webp" alt="歯並びが気になった今が 「ベストタイミング」です">
+            </picture>
+            <div class="sec-09__ttlwrap">
+                <h2 class="sec-09__ttl sec__ttl">
+                    歯並び<span class="sec-09__ttl-m sec__ttl-m">が</span>気になった今<span class="sec-09__ttl-m sec__ttl-m">が</span><br>「ベストタイミング」<span class="sec-09__ttl-m sec__ttl-m">です</span>
+                </h2>
+
+                <div class="sec-09__txt sec__txt">
+                    お子様であれば５～６歳頃から矯正治療を始めるのをおすすめしています。早めに始めることで、無理に歯を動かすことなく、痛みを抑えて歯並びを整えられます。大人であれば、歯並びが気になった時にご来院ください。矯正治療に年齢制限はありませんが、年齢を重ねることで歯が動きにくくなったり、矯正時のリスクが起きやすくなったりします。
+                </div>
+                <div class="sec-09__txt sec__txt">
+                    「歯並びが気になるな…」そう思った今が、矯正治療の始め時です。ぜひ、無料相談会のこの機会に、ひで歯科クリニックへご相談ください。
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="reserve-area" class="sec-11__wrapper sec__wrapper">
+            <div class="sec-11__inner sec__inner"> -->
+        <!-- <div class="sec-11__ttlwrap">
+                    <h2 class="sec-11__ttl sec__ttl">
+                        歯並び矯正相談会予約フォーム
+                    </h2>
+
+                    <div class="sec-11__txt sec__txt">
+                        歯並びでお悩みの方はお気軽にご相談ください。<br> 休診日にお問い合わせいただいた場合は、翌診療日のご連絡になりますので予めご了承ください。
+                    </div>
+                </div> -->
+
+        <!-- form -->
+        <!-- form -->
+        <!-- <section class="frm__wrapper" id="formArea">
+                    <div class="frm__wrapper-inner">
+                        <div id="sectionform" class="frm__inner">
+                            <div class="frm__box">
+                                <form id="mailformpro" method="POST">
+                                    <div class="frm__table-area">
+                                        <div class="frm__table-block">
+                                            <div class="frm__table-header">
+                                                <span class="frm__caption">氏名</span>
+                                                <span class="frm__required">*</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <input type="text" class="frm__text-area type-01" placeholder="姓 名" name="氏名" required>
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block">
+                                            <div class="frm__table-header">
+                                                <span class="frm__caption">ふりがな</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <input type="text" class="frm__text-area type-01" placeholder="せい めい" name="ふりがな">
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block">
+                                            <div class="frm__table-header">
+                                                <span>電話番号</span>
+                                                <span class="frm__required">*</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <input type="tel" class="frm__text-area type-01" name="電話番号" required placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block">
+                                            <div class="frm__table-header">
+                                                <span class="frm__caption">e-mail</span>
+                                                <span class="frm__required">*</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <input type="email" class="frm__text-area type-01" placeholder="e-mail@xxx.com" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block">
+                                            <div class="frm__table-header">
+                                                <span class="frm__caption">確認のためもう一度</span>
+                                                <span class="frm__required">*</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <input type="email" class="frm__text-area type-01" placeholder="e-mail@xxx.com" name="確認のためもう一度" required>
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block frm__table-block-bdnone">
+                                            <div class="frm__table-header">
+                                                <span class="frm__caption">ご来院日時</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <div class="frm__block-date-select frm__block-visit">
+                                                    <div class="frm__block-date-select-title frm__caption">第1希望<span class="frm__required">*</span></div>
+                                                    <div class="frm__block-date-select-item">
+                                                        <div class="frm__text-area-datepicker"><input type="text" class="datepicker frm__text-area js__get_date visitday1" name="第1希望" placeholder="選択してください" required></div>
+                                                        <div class="frm__block-date-select-item-02">
+                                                            <span class="frm__block-date-select-txt">時間帯</span>
+                                                            <select id="" class="frm__text-area frm__text-area-time js__reset_time-01 js__checkDate visittime1" name="第1希望［時間帯］" required readonly>
+                                                            <option value="">選択してください</option>
+                                                            <option value="午前">午前</option>
+                                                            <option value="午後">午後</option>
+                                                            <option value="夕方">夕方</option>
+                                                            <option value="いつでも良い">いつでも良い</option>
+                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="frm__block-date-select frm__block-visit">
+                                                    <div class="frm__block-date-select-title">第2希望</div>
+                                                    <div class="frm__block-date-select-item">
+                                                        <div class="frm__text-area-datepicker"><input type="text" class="datepicker frm__text-area js__get_date visitday2" name="第2希望" placeholder="選択してください" readonly></div>
+                                                        <div class="frm__block-date-select-item-02">
+                                                            <span class="frm__block-date-select-txt">時間帯</span>
+                                                            <select id="" class="frm__text-area frm__text-area-time js__reset_time-01 js__checkDate visittime2" name="第2希望［時間帯］">
+                                                            <option value="">選択してください</option>
+                                                            <option value="午前">午前</option>
+                                                            <option value="午後">午後</option>
+                                                            <option value="夕方">夕方</option>
+                                                            <option value="いつでも良い">いつでも良い</option>
+                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="frm__block-date-select frm__block-visit">
+                                                    <div class="frm__block-date-select-title">第3希望</div>
+                                                    <div class="frm__block-date-select-item">
+                                                        <div class="frm__text-area-datepicker"><input type="text" class="datepicker frm__text-area js__get_date visitday3" name="第3希望" placeholder="選択してください" readonly></div>
+                                                        <div class="frm__block-date-select-item-02">
+                                                            <span class="frm__block-date-select-txt">時間帯</span>
+                                                            <select id="" class="frm__text-area frm__text-area-time js__reset_time-01 js__checkDate visittime3" name="第3希望［時間帯］">
+                                                            <option value="">選択してください</option>
+                                                            <option value="午前">午前</option>
+                                                            <option value="午後">午後</option>
+                                                            <option value="夕方">夕方</option>
+                                                            <option value="いつでも良い">いつでも良い</option>
+                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="frm__table-block frm__table-block-bdb">
+                                            <div class="frm__table-header">
+                                                <span>ご相談内容など</span>
+                                            </div>
+                                            <div class="frm__table-body">
+                                                <textarea name="ご相談内容など" id="" cols="30" rows="5" class="frm__text-area frm__large-area" placeholder="ご相談の内容等をご入力下さい"></textarea>
+                                            </div>
+                                        </div>
+                                        <span class="frm__lasttext"><span class="frm__required">*</span>は必須項目です。</span>
+                                        <div class="frm__button-area">
+                                            <div class="frm__button-parts-area"><button class="frm__button mfp_element_submit mfp_element_all"><span
+                                                    class="frm__button-txt">入力内容を確認</span></button>
+                                                <span class="frm__button-parts"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="frm__list-coution">※診療の妨げになりますので、営業目的のお問い合わせはお断りしております。</div>
+
+                                        <div class="frm__list-wrapper">
+                                            <ul class="frm__list-area">
+                                                <li class="frm__list frm__list-01">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    本フォームは仮予約となります。医院からの確認の連絡を持って予約が完了いたします。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    医院からのご案内にお時間を要する場合があることをあらかじめご了承ください。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    直前の希望日はご期待に沿えない場合がございます。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    送信できない場合は、お手数ですが<a href="tel:083-902-2225"
+                                                        class="frm__list-txt-img">083-902-2225</a>（医院）までご連絡ください。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    メールアドレスは、入力にお間違いがないよう、ご注意ください。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    返信メールが「迷惑メールフォルダ」に振り分けられてしまう場合がございますのでご注意ください。
+                                                </span>
+                                                </li>
+                                                <li class="frm__list">
+                                                    <span class="frm__list-parts"></span>
+                                                    <span class="frm__list-txt">
+                                                    ドメイン指定受信を設定している場合には「@hide-dent.com」を受信できるように設定してください。
+                                                </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script src="./form/mailformpro/mailformpro.cgi" id="mfpjs"></script>
+                            </div>
+                        </div>
+                    </div>
+                </section>  -->
+        <!-- -->
+        <!-- </div>
+        </section> -->
+    </main>
+
+    <div class="float__entry-bnr">
+        <a href="https://reserve.peraichi.com/r/50d8aa35/select_date?course=53133" class="float__entry-link">
+            <span class="float__entry-text">相談会のご予約はこちら</span>
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <script src="./form/form.js?v=1.0.5"></script>
+    <script>
+        // fix__navi and float mimitab
+        jQuery(window).on('load', function() {
+            jQuery(function($) {
+                var fix_float = jQuery(".float__entry-bnr");
+                var foot__elem = jQuery(".entry_wrapper");
+
+                jQuery(window).scroll(function() {
+                    if (jQuery(window).scrollTop() >= 180) {
+                        fix_float.addClass("fix__float");
+                    } else {
+                        fix_float.removeClass("fix__float");
+                    }
+
+                    foot__elem.each(function() {
+
+                        var foot__elemOffset = jQuery(this).offset().top;
+                        var foot__scrollPos = jQuery(window).scrollTop();
+                        var foot__wh = jQuery(window).height();
+
+                        if (foot__scrollPos > foot__elemOffset - foot__wh) {
+                            fix_float.removeClass("fix__float");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <?php get_footer(); ?>
